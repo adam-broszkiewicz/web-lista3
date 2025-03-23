@@ -1,0 +1,10 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+footer {
+  @include mixins.flex($direction: row, $justify: center, $align: center);
+  @include mixins.background(dark);
+  @include mixins.sticky(bottom);
+
+  height: variables.$footer-height;
+}

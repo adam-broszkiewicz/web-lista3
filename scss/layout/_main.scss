@@ -1,0 +1,18 @@
+@use "../base/variables";
+
+main {
+  min-height: calc(100vh - variables.$header-height - variables.$footer-height);
+  margin: 0 auto;
+  padding: variables.$content-padding;
+  background-color: variables.$background-light;
+  text-align: justify;
+}
+
+.page-section {
+  scroll-margin-top: variables.$header-height + variables.$content-padding;
+  padding-bottom: 2rem;
+
+  p:has(a) {
+    margin-top: 1rem;
+  }
+}

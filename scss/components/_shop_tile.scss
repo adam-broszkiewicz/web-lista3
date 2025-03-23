@@ -1,0 +1,23 @@
+@use "../base/mixins";
+@use "../base/variables";
+
+.shop-tile {
+  @include mixins.flex(
+    $direction: column,
+    $justify: center,
+    $align: center,
+    $gap: 1rem
+  );
+
+  width: variables.$shop-tile-size;
+  height: variables.$shop-tile-size;
+  text-align: center;
+
+  & > img {
+    width: 50%;
+  }
+
+  button {
+    margin: 0 5px;
+  }
+}

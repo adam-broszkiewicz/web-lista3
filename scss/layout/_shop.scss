@@ -1,0 +1,5 @@
+@use "../base/mixins";
+
+.shop {
+  @include mixins.grid-layout($all-items: 7, $items-in-row: 3);
+}

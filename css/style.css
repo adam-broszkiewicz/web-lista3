@@ -1,0 +1,138 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+}
+
+.button-info, .button-warning, .button-danger, .button-success {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-success {
+  background-color: #28a745;
+}
+
+.button-danger {
+  background-color: #dc3545;
+}
+
+.button-warning {
+  background-color: #ffc107;
+}
+
+.button-info {
+  background-color: #17a2b8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-inactive {
+  filter: brightness(0.7);
+  pointer-events: none;
+}
+.link-section-anchor::before {
+  content: "⬆️";
+  margin-right: 0.2em;
+}
+
+.shop-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 16rem;
+  height: 16rem;
+  text-align: center;
+}
+.shop-tile > img {
+  width: 50%;
+}
+.shop-tile button {
+  margin: 0 5px;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  bottom: 0;
+  height: 3rem;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  height: 5rem;
+  padding: 1rem;
+}
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+}
+
+main {
+  min-height: calc(100vh - 5rem - 3rem);
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  text-align: justify;
+}
+
+.page-section {
+  scroll-margin-top: 7rem;
+  padding-bottom: 2rem;
+}
+.page-section p:has(a) {
+  margin-top: 1rem;
+}
+
+.shop {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(6, 1fr);
+}
+.shop-tile {
+  grid-column: span 2;
+}
+.shop-tile:nth-last-child(1) {
+  grid-column: span 6;
+}
+
+/*# sourceMappingURL=style.css.map */

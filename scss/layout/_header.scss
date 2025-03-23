@@ -1,0 +1,26 @@
+@use "../base/mixins";
+@use "../base/placeholders";
+@use "../base/variables";
+
+header {
+  @include mixins.flex(
+    $direction: row,
+    $justify: space-between,
+    $align: center
+  );
+  @include mixins.background(dark);
+  @include mixins.sticky(top);
+  height: variables.$header-height;
+  padding: variables.$header-padding;
+
+  nav ul {
+    @extend %list-reset;
+
+    @include mixins.flex(
+      $direction: row,
+      $justify: space-between,
+      $align: center,
+      $gap: 1em
+    );
+  }
+}

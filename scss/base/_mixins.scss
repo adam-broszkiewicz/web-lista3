@@ -1,0 +1,59 @@
+@use "variables";
+
+@mixin flex($direction, $justify, $align, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin background($theme) {
+  @if $theme == dark {
+    background-color: variables.$background-dark;
+    color: variables.$text-dark;
+  } @else if $theme == light {
+    background-color: variables.$background-light;
+    color: variables.$text-light;
+  } @else {
+    @error "Invalid theme: #{$theme}";
+  }
+}
+
+@mixin sticky($position) {
+  position: sticky;
+
+  @if $position == top {
+    top: 0;
+  } @else if $position == bottom {
+    bottom: 0;
+  } @else {
+    @error "Invalid position: #{$position}";
+  }
+}
+
+@mixin grid-layout($all-items, $items-in-row) {
+  $columns-in-row: 2 * $items-in-row;
+  $remainder-in-last-row: $all-items % $items-in-row;
+  $item-span-in-last-row: if(
+    $remainder-in-last-row == 0,
+    0,
+    $columns-in-row / $remainder-in-last-row
+  );
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat($columns-in-row, 1fr);
+
+  &-tile {
+    grid-column: span 2;
+  }
+
+  @if $remainder-in-last-row != 0 {
+    @for $i from 1 through $remainder-in-last-row {
+      &-tile:nth-last-child(#{$i}) {
+        grid-column: span $item-span-in-last-row;
+      }
+    }
+  }
+}
