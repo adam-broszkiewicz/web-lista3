@@ -139,13 +139,16 @@ main {
 .shop {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(10, 1fr);
 }
 .shop-tile {
   grid-column: span 2;
 }
 .shop-tile:nth-last-child(1) {
-  grid-column: span 6;
+  grid-column: span 5;
+}
+.shop-tile:nth-last-child(2) {
+  grid-column: span 5;
 }
 
 /*# sourceMappingURL=style.css.map */

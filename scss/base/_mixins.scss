@@ -1,3 +1,4 @@
+@use "sass:math";
 @use "variables";
 
 @mixin flex($direction, $justify, $align, $gap: 0) {
@@ -38,7 +39,7 @@
   $item-span-in-last-row: if(
     $remainder-in-last-row == 0,
     0,
-    $columns-in-row / $remainder-in-last-row
+    math.div($columns-in-row, $remainder-in-last-row)
   );
 
   display: grid;
