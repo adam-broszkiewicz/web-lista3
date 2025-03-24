@@ -8,6 +8,7 @@
 
 html {
   font-family: "Lato", sans-serif;
+  overscroll-behavior: none;
 }
 
 .button-info, .button-warning, .button-danger, .button-success {
@@ -24,17 +25,29 @@ html {
 .button-success {
   background-color: #28a745;
 }
+.button-success:hover {
+  background-color: rgb(30.1449275362, 125.8550724638, 52);
+}
 
 .button-danger {
   background-color: #dc3545;
+}
+.button-danger:hover {
+  background-color: rgb(189.2151898734, 32.7848101266, 47.7721518987);
 }
 
 .button-warning {
   background-color: #ffc107;
 }
+.button-warning:hover {
+  background-color: rgb(211, 158.25, 0);
+}
 
 .button-info {
   background-color: #17a2b8;
+}
+.button-info:hover {
+  background-color: rgb(17.3333333333, 122.0869565217, 138.6666666667);
 }
 
 a {
